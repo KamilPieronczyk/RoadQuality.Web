@@ -1,0 +1,39 @@
+<div class="d-flex flex-column h-100">
+  <mat-toolbar color="primary" [routerLink]="['/']">
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>My Profile</span>
+  </mat-toolbar>
+  
+  <div class="d-flex flex-row justify-content-center align-items-center flex-grow-1">
+  
+    <form [formGroup]="form">
+      <h1 class="text-center">Edit profile</h1>
+      <div class="d-flex w-100 gap">
+        <mat-form-field class="flex-grow-1" appearance="fill">
+          <mat-label>First name</mat-label>
+          <input matInput formControlName="firstName" type="text">
+        </mat-form-field>
+  
+        <mat-form-field class="flex-grow-1" appearance="fill">
+          <mat-label>Last name</mat-label>
+          <input matInput formControlName="lastName" type="text">
+        </mat-form-field>
+      </div>
+            
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" type="email">
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input matInput formControlName="phoneNumber" type="tel">
+      </mat-form-field>
+  
+      <button mat-raised-button color="primary" (click)="submit()" [disabled]="saving">Save changes</button>
+  
+    </form>
+  </div>
+</div>

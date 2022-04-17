@@ -1,0 +1,25 @@
+<div class="d-flex flex-column h-100 align-items-center">
+  <mat-toolbar color="primary" [routerLink]="['/']">
+    <button mat-icon-button>
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <span>Statistics</span>
+  </mat-toolbar>
+  
+  <div class="stats-container">
+    <div class="overall-stats">
+      <mat-card class="mb-4"><h2 class="text-center">Overall</h2></mat-card>
+      <app-number-chart [data]="overallStatsData.series"></app-number-chart>
+
+      <mat-card class="mb-4 mt-5"><h2 class="text-center">User Overall</h2></mat-card>
+      <app-number-chart [data]="userOverallStatsData.series"></app-number-chart>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="user-stats">
+      <mat-card><h2 class="text-center">User Stats</h2></mat-card>
+      <app-vertical-chart [data]="userStatsData"></app-vertical-chart>
+    </div>
+  </div>
+</div>

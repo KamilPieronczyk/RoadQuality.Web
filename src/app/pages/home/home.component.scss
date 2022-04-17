@@ -1,0 +1,25 @@
+mat-card img {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+mat-card {
+  cursor: pointer;
+  width: 266px;
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card mat-icon {
+  font-size: 200px;
+  width: 200px;
+  height: 200px;
+  margin: auto;
+}
+
+.logout {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}

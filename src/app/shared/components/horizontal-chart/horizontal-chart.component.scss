@@ -1,0 +1,10 @@
+:host ::ng-deep {
+  .ngx-charts text { 
+    fill: #fff; 
+    font-size: 16px;
+  }
+
+  .ngx-charts { 
+    font-size: 16px !important;
+  }
+}

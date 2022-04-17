@@ -1,0 +1,12 @@
+<google-map
+  [zoom]="zoom"
+  height="100%"
+  width="100%"
+  [center]="center"
+  [options]="options"
+  (zoomChanged)="onZoom()"
+  (centerChanged)="centerChanged()"
+  >
+  <map-heatmap-layer *ngIf="rerender | async" [data]="heatMapData" [options]="heatmapOptions"></map-heatmap-layer>
+  <map-circle *ngIf="circleCenter != null && mapSettings.geoSearch" [center]="circleCenter" [radius]="radius" [options]="{fillOpacity: .05}"></map-circle>
+</google-map>

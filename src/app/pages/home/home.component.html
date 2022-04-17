@@ -1,0 +1,32 @@
+<div class="d-flex flex-row justify-content-center align-items-center h-100">
+  <app-auth-checker>
+    <mat-card class="mat-elevation-z19" [routerLink]="['/profile']" logged>
+      <mat-card-title class="text-center">View your profile</mat-card-title>
+      <mat-icon mat-card-image aria-hidden="false" color="primary" aria-label="Example home icon">account_circle</mat-icon>
+    </mat-card>
+  
+    <mat-card class="mat-elevation-z19" anonymous (click)="login()">
+      <mat-card-title class="text-center">Login</mat-card-title>
+      <mat-icon mat-card-image aria-hidden="false" color="primary" aria-label="Example home icon">login</mat-icon>
+    </mat-card>
+  </app-auth-checker>
+
+  <mat-card class="ml-5 mat-elevation-z19" [routerLink]="['/map']">
+    <mat-card-title class="text-center">View maps</mat-card-title>
+    <mat-icon mat-card-image aria-hidden="false" color="primary" aria-label="Example home icon">map</mat-icon>
+  </mat-card>
+
+  <app-auth-checker>
+    <mat-card class="mat-elevation-z19 ml-5" [routerLink]="['/statistics']" logged>
+      <mat-card-title class="text-center">Statistics</mat-card-title>
+      <mat-icon mat-card-image aria-hidden="false" color="primary" aria-label="Example home icon">bar_chart</mat-icon>
+    </mat-card>
+  </app-auth-checker>
+  
+  <app-auth-checker>
+    <button mat-button color="primary" class="logout" (click)="logout()" logged>Logout</button>
+  </app-auth-checker>
+</div>
+
+
+

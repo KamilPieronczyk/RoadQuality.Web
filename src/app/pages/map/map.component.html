@@ -1,0 +1,65 @@
+<app-map></app-map>
+
+<div class="picker-card">
+  <mat-card [class.gradient-border]="isLoadingMapData" [formGroup]="form">
+    <mat-card-content>
+
+      <mat-radio-group
+        class="radio-group"
+        formControlName="mapDataType">
+        <mat-radio-button class="example-radio-button" [value]="MapDataType.Quality">
+          Road quality
+        </mat-radio-button>
+        <mat-radio-button class="example-radio-button" [value]="MapDataType.Speed">
+          Road speed
+        </mat-radio-button>
+      </mat-radio-group>
+  
+      <section class="example-section">
+        <mat-checkbox #dateSearchEnable formControlName="searchByDate">Enable search by date</mat-checkbox>
+      </section>
+  
+      <table>
+        <tr>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose a start date</mat-label>
+              <input formControlName="startDate" [disabled]="!dateSearchEnable.checked" matInput [matDatepicker]="picker">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Choose an end date</mat-label>
+              <input formControlName="endDate" [disabled]="!dateSearchEnable.checked" matInput [matDatepicker]="picker2">
+              <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+              <mat-datepicker #picker2></mat-datepicker>
+            </mat-form-field>
+          </td>
+        </tr>
+      </table>
+  
+      <mat-form-field appearance="fill">
+        <mat-label>Size in km</mat-label>
+        <input matInput formControlName="radius" type="number" step="0.1" min="0.1" max="100">
+      </mat-form-field>
+
+      <app-auth-checker>
+        <section logged>
+          <mat-checkbox formControlName="onlyLoggedUser">Show only data collected by me</mat-checkbox>
+        </section>
+      </app-auth-checker>
+  
+      <section>
+        <mat-checkbox formControlName="fitPoints">Scale points to fit the road boundaries</mat-checkbox>
+      </section>
+
+      <section>
+        <mat-checkbox formControlName="geoSearch">Enable search by geo</mat-checkbox>
+      </section>
+
+      <button mat-raised-button color="primary" class="text-uppercase" (click)="submit()">Search</button>  
+    </mat-card-content>
+  </mat-card>
+</div>

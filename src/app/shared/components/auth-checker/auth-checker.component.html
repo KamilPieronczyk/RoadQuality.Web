@@ -1,0 +1,3 @@
+<ng-content select="[logged]" *ngIf="isUserLoggedIn"></ng-content>
+<ng-content select="[anonymous]" *ngIf="!isUserLoggedIn"></ng-content>
+

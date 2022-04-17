@@ -1,0 +1,40 @@
+@import 'variables';
+
+.stats-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 4px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: "overall line user-stats";
+  gap: 32px;
+  margin: 160px 60px;
+  width: 100%;
+  max-width: 1600px;
+}
+
+.overall-stats {
+  grid-area: overall;
+  display: flex;
+  flex-direction: column;
+
+  app-horizontal-chart {
+    flex-basis: 400px;
+  }
+}
+
+.line {
+  grid-area: line;
+  display: block;
+  border-radius: 2px;
+  background-color: $primary;
+}
+
+.user-stats {
+  grid-area: user-stats;
+  display: flex;
+  flex-direction: column;
+
+  app-vertical-chart {
+    flex: 1;
+  }
+}
